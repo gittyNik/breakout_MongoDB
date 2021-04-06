@@ -32,7 +32,7 @@ mongoose
 	})
 
 	app.get('/fetchAll', function (req, res) {
-		const { age } = req.params;
+		// const { age } = req.params;
 		Person.find()
 		.then(data => res.send(data))
 		.catch(err => res.send(err));
@@ -51,7 +51,7 @@ mongoose
 
 // mongoose => Schema => Model => Document => Save in mongodb
 
-	app.get('/user/:name/:age', function (req, res) {
+	app.post('/user/:name/:age', function (req, res) {
 		const { name, age } = req.params;
 		var person1 = new Person({
 			name,
